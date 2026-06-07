@@ -12,37 +12,22 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #e0f0ff 0%, #b8d9ff 50%, #8fc5ff 100%);
+            padding: 24px;
+            background: linear-gradient(145deg, #eef5ff 0%, #dce8f5 100%);
             position: relative;
         }
 
-        /* افکت دایره‌های تزیینی آرامش‌بخش */
-        body::before {
-            content: '';
+        /* المان‌های تزیینی مینیمال */
+        .bg-dot {
             position: absolute;
-            top: 10%;
-            left: -10%;
-            width: 300px;
-            height: 300px;
-            background: rgba(255,255,255,0.3);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        body::after {
-            content: '';
-            position: absolute;
-            bottom: 10%;
-            right: -10%;
-            width: 250px;
-            height: 250px;
-            background: rgba(255,255,255,0.25);
+            width: 6px;
+            height: 6px;
+            background: rgba(59,130,246,0.15);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -50,193 +35,244 @@
         .container {
             position: relative;
             z-index: 1;
-            max-width: 500px;
+            max-width: 520px;
             width: 100%;
-            text-align: center;
         }
 
-        /* کارت اصلی سفید با سایه نرم */
+        /* کارت اصلی - طراحی مینیمال و تمیز */
         .card {
             background: #ffffff;
-            border-radius: 48px;
-            padding: 45px 30px 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            border-radius: 32px;
+            padding: 48px 32px 40px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
+        /* نام برند با استایل حرفه‌ای */
+        .brand {
+            text-align: center;
+            margin-bottom: 32px;
         }
-
-        /* لوگوی ساده با حرف اول اسم */
-        .logo {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #4a90e2, #7bb3e0);
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            box-shadow: 0 8px 20px rgba(74,144,226,0.3);
-        }
-        .logo span {
+        .brand-name {
             font-size: 32px;
             font-weight: 700;
-            color: white;
+            color: #1a2c3e;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+        .brand-tagline {
+            font-size: 13px;
+            color: #7c8b9c;
+            letter-spacing: 1px;
+            font-weight: 400;
         }
 
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #2c3e50;
-            letter-spacing: -0.3px;
+        .divider {
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #4a90e2, #b8d9ff);
+            margin: 0 auto 32px auto;
+            border-radius: 3px;
         }
 
-        .bio {
-            color: #7f8c8d;
-            font-size: 14px;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #ecf0f1;
-            display: inline-block;
+        /* دکمه‌های لینک - طراحی یکدست و مینیمال */
+        .links-section {
+            margin-bottom: 32px;
         }
 
-        /* دکمه‌ها */
-        .btn {
+        .link-btn {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             gap: 12px;
             margin: 12px 0;
             padding: 14px 20px;
             border-radius: 60px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            transition: all 0.25s ease;
+            border: 1px solid #eef2f6;
+            background: #ffffff;
         }
 
-        .btn:hover {
+        .link-btn:hover {
             transform: translateY(-2px);
-            filter: brightness(0.98);
+            border-color: #d0e2fc;
+            box-shadow: 0 6px 14px rgba(74,144,226,0.1);
         }
 
-        .btn img {
+        .link-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .link-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .link-icon img {
             width: 22px;
             height: 22px;
         }
 
-        /* دکمه اینستاگرام - آبی ملایم */
-        .btn-instagram {
+        .link-text {
+            font-weight: 550;
+            font-size: 15px;
+            color: #2c3e50;
+        }
+
+        .link-arrow {
+            color: #b0c4de;
+            font-size: 18px;
+            transition: transform 0.2s ease;
+        }
+
+        .link-btn:hover .link-arrow {
+            transform: translateX(-4px);
+            color: #4a90e2;
+        }
+
+        /* اینستاگرام - آبی ملایم */
+        .instagram-btn .link-icon {
             background: #e8f0fe;
-            color: #3b82f6;
-            border: 1px solid #d0e2fc;
-        }
-        .btn-instagram:hover {
-            background: #dce9fb;
-            box-shadow: 0 5px 15px rgba(59,130,246,0.15);
-        }
-
-        /* دکمه واتساپ - سبز ملایم */
-        .btn-whatsapp {
-            background: #e8f8f0;
-            color: #2ecc71;
-            border: 1px solid #d0f0e0;
-        }
-        .btn-whatsapp:hover {
-            background: #daf4e8;
-            box-shadow: 0 5px 15px rgba(46,204,113,0.12);
-        }
-
-        /* ردیف شماره تماس - خاکستری روشن */
-        .phone-row {
+            border-radius: 30px;
+            width: 32px;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin: 10px 0;
-            padding: 12px 20px;
-            border-radius: 60px;
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            transition: all 0.2s ease;
         }
-        .phone-row:hover {
-            background: #f1f3f5;
-            transform: translateY(-1px);
+
+        /* واتساپ - سبز ملایم */
+        .whatsapp-btn .link-icon {
+            background: #e8f8f0;
+            border-radius: 30px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .phone-row img {
-            width: 20px;
-            height: 20px;
-            opacity: 0.7;
+
+        /* بخش شماره تماس */
+        .contact-section {
+            background: #f8fafc;
+            border-radius: 24px;
+            padding: 20px;
+            margin-top: 8px;
         }
-        .phone-row .label {
-            font-weight: 600;
-            color: #2c3e50;
-            font-size: 14px;
+
+        .contact-title {
+            font-size: 12px;
+            color: #8e9eae;
+            text-align: center;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            font-weight: 500;
         }
-        .phone-row .number {
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #e8edf2;
+        }
+        .contact-row:last-child {
+            border-bottom: none;
+        }
+
+        .contact-row img {
+            width: 18px;
+            height: 18px;
+            opacity: 0.6;
+        }
+
+        .contact-label {
+            font-size: 13px;
             color: #5a6e7c;
+            font-weight: 500;
+        }
+
+        .contact-number {
             direction: ltr;
             font-size: 15px;
+            color: #2c3e50;
             font-weight: 500;
             letter-spacing: 0.3px;
         }
 
         .footer {
-            margin-top: 25px;
+            text-align: center;
+            margin-top: 28px;
             font-size: 11px;
-            color: #95a5a6;
-            border-top: 1px solid #ecf0f1;
-            padding-top: 20px;
+            color: #a5b7c9;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="card">
-            <div class="logo">
-                <span>ر</span>
+            <div class="brand">
+                <div class="brand-name">بازرگانی رز</div>
+                <div class="brand-tagline">ارائه بهترین خدمات با کیفیت</div>
             </div>
-            <h1>بازرگانی رز</h1>
-            <div class="bio">ارائه بهترین خدمات با کیفیت</div>
-            
-            <!-- اینستاگرام -->
-            <a href="https://www.instagram.com/bazergani.rose" class="btn btn-instagram">
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="اینستاگرام">
-                اینستاگرام بازرگانی رز
-            </a>
-            
-            <!-- واتساپ ۱ -->
-            <a href="https://wa.me/989144445799" class="btn btn-whatsapp">
-                <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="واتساپ">
-                واتساپ ۱
-            </a>
-            
-            <!-- واتساپ ۲ -->
-            <a href="https://wa.me/989122622765" class="btn btn-whatsapp">
-                <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="واتساپ">
-                واتساپ ۲
-            </a>
-            
-            <!-- شماره تماس اول -->
-            <div class="phone-row">
-                <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="تماس">
-                <span class="label">تماس:</span>
-                <span class="number">09144445799</span>
+            <div class="divider"></div>
+
+            <div class="links-section">
+                <!-- اینستاگرام -->
+                <a href="https://www.instagram.com/bazergani.rose" class="link-btn instagram-btn">
+                    <div class="link-left">
+                        <div class="link-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="اینستاگرام">
+                        </div>
+                        <span class="link-text">اینستاگرام</span>
+                    </div>
+                    <div class="link-arrow">←</div>
+                </a>
+
+                <!-- واتساپ ۱ -->
+                <a href="https://wa.me/989144445799" class="link-btn whatsapp-btn">
+                    <div class="link-left">
+                        <div class="link-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="واتساپ">
+                        </div>
+                        <span class="link-text">واتساپ ۱</span>
+                    </div>
+                    <div class="link-arrow">←</div>
+                </a>
+
+                <!-- واتساپ ۲ -->
+                <a href="https://wa.me/989122622765" class="link-btn whatsapp-btn">
+                    <div class="link-left">
+                        <div class="link-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="واتساپ">
+                        </div>
+                        <span class="link-text">واتساپ ۲</span>
+                    </div>
+                    <div class="link-arrow">←</div>
+                </a>
             </div>
-            
-            <!-- شماره تماس دوم -->
-            <div class="phone-row">
-                <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="تماس">
-                <span class="label">تماس:</span>
-                <span class="number">09122622765</span>
+
+            <div class="contact-section">
+                <div class="contact-title">راه‌های ارتباطی</div>
+                <div class="contact-row">
+                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="تماس">
+                    <span class="contact-label">شماره تماس ۱ :</span>
+                    <span class="contact-number">۰۹۱۴۴۴۴۵۷۹۹</span>
+                </div>
+                <div class="contact-row">
+                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="تماس">
+                    <span class="contact-label">شماره تماس ۲ :</span>
+                    <span class="contact-number">۰۹۱۲۲۶۲۲۷۶۵</span>
+                </div>
             </div>
-            
+
             <div class="footer">
                 بازرگانی رز | همراه همیشگی شما
             </div>
